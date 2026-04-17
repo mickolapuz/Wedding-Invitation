@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kurt and Maica Wedding Invitation</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <section class="intro" id="intro">
+      <div class="intro-content">
+        <h1>You are invited</h1>
+        <p>to the wedding of</p>
+        <h2>Kurt & Maica</h2>
+        <button id="openBtn">View Invitation</button>
+      </div>
+    </section>
+
+    <main class="invitation" id="invitation">
+      <section class="sheet">
+        <img src="./assets/Sheet1.png" />
+      </section>
+      <section class="sheet">
+        <img src="./assets/Sheet2.png" />
+      </section>
+      <section class="sheet">
+        <img src="./assets/Sheet3.png" />
+      </section>
+      <section class="sheet">
+        <img src="./assets/Sheet4.png" />
+      </section>
+      <section class="sheet">
+        <img src="./assets/Sheet5.png" />
+      </section>
+    </main>
+
+    <script>
+      const btn = document.getElementById("openBtn");
+      const intro = document.getElementById("intro");
+      const invitation = document.getElementById("invitation");
+
+      btn.addEventListener("click", () => {
+        intro.classList.add("hide");
+        invitation.classList.add("show");
+      });
+    </script>
+  </body>
+</html>

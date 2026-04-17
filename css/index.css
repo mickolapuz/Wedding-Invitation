@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    url("../assets/BG.png") center/cover no-repeat;
+
+  overflow: hidden;
+}
+
+.intro {
+  position: fixed;
+  inset: 0;
+  background: url("../assets/BG.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease,
+    visibility 0.8s ease;
+}
+
+.intro.hide {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.06);
+}
+
+.intro-content {
+  width: min(88%, 460px);
+  padding: 40px 28px;
+  border-radius: 28px;
+  background: rgba(47, 79, 90, 0.78);
+  border: 1px solid rgba(212, 183, 122, 0.45);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  animation: introCardIn 1s ease;
+}
+
+.intro-content h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #f4eee8;
+}
+
+.intro-content p {
+  margin: 14px 0;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.intro-content h2 {
+  margin: 0 0 28px;
+  font-family: "Playfair Display", serif;
+  font-size: 3.4rem;
+  line-height: 1.05;
+  color: #ffffff;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.intro button {
+  padding: 14px 32px;
+  border-radius: 999px;
+  border: 1px solid #d4b77a;
+  background: #d4b77a;
+  color: #2f4f5a;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.intro button:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: #e2c995;
+  color: #24414b;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+}
+
+.intro button:active {
+  transform: scale(0.98);
+}
+
+.invitation {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.985);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.invitation.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.sheet {
+  min-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  flex: 0 0 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+}
+
+.sheet img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.invitation::-webkit-scrollbar {
+  display: none;
+}
+
+.invitation {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+@media (min-width: 1024px) {
+  .sheet img {
+    height: 100vh;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .intro-content h2 {
+    font-size: 3rem;
+  }
+
+  .sheet img {
+    height: 100vh;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-content {
+    width: min(88%, 360px);
+    padding: 32px 22px;
+    border-radius: 24px;
+  }
+
+  .intro-content h1 {
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+
+  .intro-content p {
+    font-size: 0.95rem;
+  }
+
+  .intro-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+  }
+
+  .intro button {
+    padding: 12px 26px;
+    font-size: 0.95rem;
+  }
+
+  .sheet img {
+    height: 100vh;
+    max-width: 100%;
+  }
+}
+
+@keyframes introCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
