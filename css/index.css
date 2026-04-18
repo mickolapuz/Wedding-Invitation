@@ -1,21 +1,24 @@
+@font-face {
+  font-family: "SofiaProLight";
+  src: url("../assets/fonts/sofiapro-light.otf") format("opentype");
+}
+
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-
-  background: url("../assets/BG.png") center/cover no-repeat;
-
+  font-family: "SofiaProLight", "Segoe UI", sans-serif;
+  background: url("../assets/BG.png") center / cover no-repeat;
   overflow: hidden;
 }
 
 .intro {
   position: fixed;
   inset: 0;
-  background: url("../assets/BG.png") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 20px;
+  background: url("../assets/BG.png") center / cover no-repeat;
   z-index: 10;
   opacity: 1;
   visibility: visible;
@@ -33,57 +36,54 @@ body {
 }
 
 .intro-content {
-  width: min(88%, 460px);
-  padding: 40px 28px;
-  border-radius: 28px;
-  background: rgba(47, 79, 90, 0.78);
+  width: min(90vw, 520px);
+  padding: 56px 36px;
+  border-radius: 32px;
+  background: rgba(47, 79, 90, 0.85);
   border: 1px solid rgba(212, 183, 122, 0.45);
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
-  animation: introCardIn 1s ease;
-}
-
-.intro-content h1 {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #f4eee8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
 }
 
 .intro-content p {
-  margin: 14px 0;
+  margin: 0;
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.intro-content h2 {
-  margin: 0 0 28px;
-  font-family: "Playfair Display", serif;
-  font-size: 3.4rem;
-  line-height: 1.05;
-  color: #ffffff;
-  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+.intro-content p:first-child {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.intro-content img {
+  display: block;
+  width: min(100%, 380px);
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+
+  margin: 10px 0 20px;
 }
 
 .intro button {
+  margin-top: 10px;
   padding: 14px 32px;
   border-radius: 999px;
   border: 1px solid #d4b77a;
   background: #d4b77a;
   color: #2f4f5a;
   font-size: 1rem;
-  font-weight: 700;
   cursor: pointer;
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .intro button:hover {
@@ -111,6 +111,8 @@ body {
   transition:
     opacity 0.9s ease,
     transform 0.9s ease;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .invitation.show {
@@ -119,54 +121,27 @@ body {
   transform: scale(1);
 }
 
+.invitation::-webkit-scrollbar {
+  display: none;
+}
+
 .sheet {
-  min-width: 100vw;
+  flex: 0 0 100vw;
   width: 100vw;
   height: 100vh;
-  flex: 0 0 100vw;
+  min-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
-  box-sizing: border-box;
   scroll-snap-align: start;
 }
 
 .sheet img {
-  display: block;
   width: auto;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  transition: transform 0.5s ease;
-}
-
-.invitation::-webkit-scrollbar {
-  display: none;
-}
-
-.invitation {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-@media (min-width: 1024px) {
-  .sheet img {
-    height: 100vh;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 1023px) {
-  .intro-content h2 {
-    font-size: 3rem;
-  }
-
-  .sheet img {
-    height: 100vh;
-    max-width: 100%;
-  }
 }
 
 @media (max-width: 768px) {
@@ -175,33 +150,44 @@ body {
   }
 
   .intro-content {
-    width: min(88%, 360px);
+    width: min(92vw, 360px);
     padding: 32px 22px;
     border-radius: 24px;
-  }
-
-  .intro-content h1 {
-    font-size: 1rem;
-    letter-spacing: 3px;
   }
 
   .intro-content p {
     font-size: 0.95rem;
   }
 
-  .intro-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 24px;
+  .intro-content p:first-child {
+    font-size: 0.82rem;
+    letter-spacing: 2.5px;
+  }
+
+  .intro-content img {
+    width: min(100%, 280px);
+    margin: 16px auto 26px;
   }
 
   .intro button {
     padding: 12px 26px;
     font-size: 0.95rem;
   }
+}
 
-  .sheet img {
-    height: 100vh;
-    max-width: 100%;
+@media (max-width: 480px) {
+  .intro-content {
+    width: min(94vw, 320px);
+    padding: 28px 18px;
+  }
+
+  .intro-content img {
+    width: min(100%, 240px);
+  }
+
+  .intro button {
+    width: 100%;
+    max-width: 220px;
   }
 }
 
