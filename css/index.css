@@ -39,7 +39,7 @@ body {
   width: min(90vw, 520px);
   padding: 56px 36px;
   border-radius: 32px;
-  background: rgba(47, 79, 90, 0.85);
+  background: url("../assets/White BG.png") center / cover no-repeat;
   border: 1px solid rgba(212, 183, 122, 0.45);
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.28),
@@ -55,14 +55,14 @@ body {
   margin: 0;
   font-size: 1rem;
   letter-spacing: 1px;
-  color: #d4b77a;
+  color: #b4957c;
 }
 
 .intro-content p:first-child {
-  text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 0.9rem;
-  color: #d4b77a;
+  color: #b4957c;
+  font-weight: 700;
 }
 
 .intro-content img {
@@ -70,8 +70,6 @@ body {
   width: min(100%, 380px);
   height: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-
   margin: 10px 0 20px;
 }
 
@@ -81,8 +79,9 @@ body {
   border-radius: 999px;
   border: 1px solid #d4b77a;
   background: #d4b77a;
-  color: #2f4f5a;
+  color: #fff;
   font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
 }
 
