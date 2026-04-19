@@ -55,14 +55,14 @@ body {
   margin: 0;
   font-size: 1rem;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #d4b77a;
 }
 
 .intro-content p:first-child {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: #d4b77a;
 }
 
 .intro-content img {
